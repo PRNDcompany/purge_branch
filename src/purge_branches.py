@@ -8,7 +8,7 @@ import datetime
 
 import requests
 
-KEEP_ALIVE_PREFIX = "keep-alive-"
+KEEPALIVE_BRANCHES = ["dev"]
 GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
 GITHUB_API_URL = "https://api.github.com"
 REQUEST_TIMEOUT_SECONDS = 10
@@ -92,7 +92,7 @@ def triage_branches(args, branches):
 
     for branch in branches:
         # ignore branches with keep-alive prefix
-        if branch['name'].startswith(KEEP_ALIVE_PREFIX): 
+        if branch['name'] in KEEPALIVE_BRANCHES: 
             continue
         # ignore branches with open PRs
         if branch['associatedPullRequests']['nodes']:
