@@ -1,4 +1,4 @@
-name: 'Delete stale branches'
+name: 'Delete stale branches - customized for prnd backend'
 description: 'Notify authors of old branches and auto delete if no action is taken'
 branding:
   icon: 'delete'
